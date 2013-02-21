@@ -89,18 +89,34 @@
 -(void)customText:(id)args
 {
     ENSURE_SINGLE_ARG(args, NSDictionary);
-    TiColor *textColor      = [TiUtils colorValue:[args objectForKey:@"textColor"]];
-    TiColor *shadowColor    = [TiUtils colorValue:[args objectForKey:@"shadowColor"]];
-    WebFont *font           = [TiUtils fontValue:[args objectForKey:@"font"]];
+    TiColor *normalTextColor      = [TiUtils colorValue:[args objectForKey:@"normalTextColor"]];
+    TiColor *normalShadowColor    = [TiUtils colorValue:[args objectForKey:@"normalShadowColor"]];
+    WebFont *normalFont           = [TiUtils fontValue:[args objectForKey:@"normalFont"]];
     [[UITabBarItem appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [textColor color], UITextAttributeTextColor,
-      [shadowColor color], UITextAttributeTextShadowColor,
+      [normalTextColor color], UITextAttributeTextColor,
+      [normalShadowColor color], UITextAttributeTextShadowColor,
       [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset,
-      [font font], UITextAttributeFont,
+      [normalFont font], UITextAttributeFont,
       nil
       ]
                                              forState:UIControlStateNormal];
+    
+    TiColor *activeTextColor      = [TiUtils colorValue:[args objectForKey:@"activeTextColor"]];
+    TiColor *activeShadowColor    = [TiUtils colorValue:[args objectForKey:@"activeShadowColor"]];
+    WebFont *activeFont           = [TiUtils fontValue:[args objectForKey:@"activeFont"]];
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [activeTextColor color], UITextAttributeTextColor,
+      [activeShadowColor color], UITextAttributeTextShadowColor,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, 1)], UITextAttributeTextShadowOffset,
+      [activeFont font], UITextAttributeFont,
+      nil
+      ]
+                                             forState:UIControlStateSelected];
+    
+    
+    
 }
 
 -(id)exampleProp

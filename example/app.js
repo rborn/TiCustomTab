@@ -2,13 +2,23 @@ var ticustomtab = require('de.marcelpociot.ticustomtab');
 Ti.API.info("module is => " + ticustomtab);
 
 ticustomtab.customText({
-	textColor:  	'#ff9900',
-	shadowColor: 	'red', 
-	font: 			{
+	activeTextColor:  	'#ff9900',
+	activeShadowColor: 	'red', 
+	activeFont: 			{
 		fontSize: 	20,
 		fontFamily: 'Palatino', 
 		fontWeight: 'bold'
+	},
+
+	normalTextColor:  	'#00ff00',
+	normalShadowColor: 	'white', 
+	normalFont: 			{
+		fontSize: 	10
 	}
+
+
+
+
 });
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
