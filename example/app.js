@@ -3,7 +3,7 @@ Ti.API.info("module is => " + ticustomtab);
 
 ticustomtab.customText({
 	activeTextColor:  	'#ff9900',
-	activeShadowColor: 	'red', 
+	activeShadowColor: 	'green', 
 	activeFont: 			{
 		fontSize: 	20,
 		fontFamily: 'Palatino', 
